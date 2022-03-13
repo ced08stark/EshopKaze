@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EshopKaze.Database", "EshopKaze.Database\EshopKaze.Database.sqlproj", "{E5EA68B2-6F0B-4A48-8085-0B2D04141C86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopKaze.Repository", "EshopKaze.Repository\EshopKaze.Repository.csproj", "{01A96866-89AB-4BD4-86D8-1AA5F38A57D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopKaze.WebApi", "EshopKaze.WebApi\EshopKaze.WebApi.csproj", "{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{E5EA68B2-6F0B-4A48-8085-0B2D04141C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5EA68B2-6F0B-4A48-8085-0B2D04141C86}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E5EA68B2-6F0B-4A48-8085-0B2D04141C86}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{01A96866-89AB-4BD4-86D8-1AA5F38A57D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A96866-89AB-4BD4-86D8-1AA5F38A57D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A96866-89AB-4BD4-86D8-1AA5F38A57D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A96866-89AB-4BD4-86D8-1AA5F38A57D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
