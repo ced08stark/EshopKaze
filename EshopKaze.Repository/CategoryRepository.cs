@@ -50,13 +50,14 @@ namespace EshopKaze.Repository
             if (category == null)
                 throw new ArgumentNullException(nameof(category));
 
+            var currentDb = new EshopKazeEntities();
 
-            var OldCategory = Get(category.Id);
+            var OldCategory = currentDb.User.Find(category.Id);
 
-            if (OldCategory != null)
+            if (OldCategory == null)
                 throw new KeyNotFoundException($"category not found!");
 
-            var c = new EshopKazeEntities().Category.Find(category.Id);
+            var c = currentDb.Category.FirstOrDefault(x => x.Name == category.Name); 
 
             if (c != null && c.Id != OldCategory.Id)
                 throw new DuplicateWaitObjectException($"Category name {category.Name} already exist !");

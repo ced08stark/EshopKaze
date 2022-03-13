@@ -18,5 +18,23 @@ namespace EshopKaze.Repository
             Fullname = fullname;
             Role = role;
         }
+
+        
+    }
+
+    public partial class Category
+    {
+        public Category()
+        {
+
+        }
+
+        public Category(int id, string name, int userId)
+        {
+            Id = id;
+            Name = name;
+            UserId = userId;
+          
+        }
     }
 }
