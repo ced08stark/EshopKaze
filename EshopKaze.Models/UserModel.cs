@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using EshopKaze.Repository;
-
-namespace EshopKaze.WebApi.Models
+﻿namespace EshopKaze.Models
 {
     public class UserModel
     {
@@ -30,9 +24,6 @@ namespace EshopKaze.WebApi.Models
             Role = role;
         }
 
-        public UserModel(User user):this(user?.Id??0, user?.Username, user?.Password, user?.Fullname, user?.Role)
-        {
-            
-        }
+        
     }
 }

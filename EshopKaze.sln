@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopKaze.Repository", "Esh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopKaze.WebApi", "EshopKaze.WebApi\EshopKaze.WebApi.csproj", "{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopKaze.Models", "EshopKaze.Models\EshopKaze.Models.csproj", "{384671A6-F086-4F50-AD54-199EE4977064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B2DAE86-A54D-4460-BFEE-4977BB357CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384671A6-F086-4F50-AD54-199EE4977064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384671A6-F086-4F50-AD54-199EE4977064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384671A6-F086-4F50-AD54-199EE4977064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384671A6-F086-4F50-AD54-199EE4977064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

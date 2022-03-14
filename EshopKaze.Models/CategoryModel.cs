@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using EshopKaze.Repository;
-
-namespace EshopKaze.WebApi.Models
+﻿namespace EshopKaze.Models
 {
     public class CategoryModel
     {
@@ -23,9 +17,6 @@ namespace EshopKaze.WebApi.Models
             User = user;
         }
 
-        public CategoryModel(Category category):this(category?.Id??0, category?.Name, category?.UserId??0, new UserModel(category?.User))
-        {
-           
-        }
+       
     }
 }

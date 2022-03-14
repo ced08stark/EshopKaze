@@ -4,8 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using EshopKaze.Models;
 using EshopKaze.Repository;
-using EshopKaze.WebApi.Models;
+
 
 namespace EshopKaze.WebApi.Controllers
 {
@@ -20,12 +21,30 @@ namespace EshopKaze.WebApi.Controllers
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            var category  = categoryRepository.Get(id);
+            var category = categoryRepository.Get(id);
             if (category == null)
                 return NotFound();
-            return Ok(new CategoryModel(category));
+            return base.Ok(
+                MapCategory(category)
+                );
         }
 
+        private CategoryModel MapCategory(Category category)
+        {
+            return new CategoryModel
+                            (
+                                category?.Id ?? 0,
+                                category?.Name,
+                                category?.UserId ?? 0,
+                                new UserModel(
+                                    category.User.Id,
+                                    category.User.Username,
+                                    category.User.Password,
+                                    category.User.Fullname,
+                                    category.User.Role
+                                    )
+                                );
+        }
 
         [HttpGet]
         public IHttpActionResult Get(string name)
@@ -33,7 +52,9 @@ namespace EshopKaze.WebApi.Controllers
             var category = categoryRepository.Get(name);
             if (category == null)
                 return NotFound();
-            return Ok(new CategoryModel(category));
+            return Ok(
+                MapCategory(category)
+            );
         }
 
 
@@ -45,7 +66,14 @@ namespace EshopKaze.WebApi.Controllers
                 x => x.Name.ToLower().Contains(searchValue)
                 );
            
-            return Ok(categories.Select(x => new CategoryModel(x)).ToArray());
+            return Ok(
+                categories.Select
+                (
+                    x 
+                    =>
+                    MapCategory(x)
+
+                    ).ToArray());
         }
 
 
@@ -60,7 +88,9 @@ namespace EshopKaze.WebApi.Controllers
                 var category = new Category(0, categoryModel.Name, categoryModel.UserId);
                 category = categoryRepository.Add(category);
 
-                return Ok(new CategoryModel(category));
+                return Ok(
+                     MapCategory(category)
+               );
             }
             catch (DuplicateWaitObjectException)
             {
@@ -85,7 +115,9 @@ namespace EshopKaze.WebApi.Controllers
                 var category = new Category(categoryModel.Id, categoryModel.Name, categoryModel.UserId);
                 category = categoryRepository.Set(category);
 
-                return Ok(new CategoryModel(category));
+                return Ok(
+                    MapCategory(category)
+                );
             }
             catch (KeyNotFoundException)
             {
@@ -110,7 +142,7 @@ namespace EshopKaze.WebApi.Controllers
 
             var category = categoryRepository.Delete(id);
 
-            return Ok(new CategoryModel(category));
+            return Ok(MapCategory(category));
         }
     }
 }

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using EshopKaze.Models;
 using EshopKaze.Repository;
-using EshopKaze.WebApi.Models;
+
 
 namespace EshopKaze.WebApi.Controllers
 {
@@ -23,7 +24,7 @@ namespace EshopKaze.WebApi.Controllers
             var user  = userRepository.Get(id);
             if (user == null)
                 return NotFound();
-            return Ok(new UserModel(user));
+            return Ok(MapUser(user));
         }
 
 
@@ -33,7 +34,7 @@ namespace EshopKaze.WebApi.Controllers
             var user = userRepository.Get(username);
             if (user == null)
                 return NotFound();
-            return Ok(new UserModel(user));
+            return Ok(MapUser(user));
         }
 
 
@@ -43,7 +44,7 @@ namespace EshopKaze.WebApi.Controllers
             var user = userRepository.Get(username, password);
             if (user == null)
                 return NotFound();
-            return Ok(new UserModel(user));
+            return Ok(MapUser(user));
         }
 
 
@@ -57,7 +58,7 @@ namespace EshopKaze.WebApi.Controllers
                 var user = new User(0, userModel.Username, userModel.Password, userModel.Fullname, userModel.Role);
                 user = userRepository.Add(user);
 
-                return Ok(new UserModel(user));
+                return Ok(MapUser(user));
             }
             catch(DuplicateWaitObjectException)
             {
@@ -82,9 +83,9 @@ namespace EshopKaze.WebApi.Controllers
                 var user = new User(userModel.Id, userModel.Username, userModel.Password, userModel.Fullname, userModel.Role);
                 user = userRepository.Set(user);
 
-                return Ok(new UserModel(user));
+                return base.Ok(MapUser(user));
             }
-            catch(KeyNotFoundException)
+            catch (KeyNotFoundException)
             {
                 return NotFound();
             }
@@ -97,6 +98,11 @@ namespace EshopKaze.WebApi.Controllers
                 return BadRequest(ex.Message);
             }
 
+        }
+
+        private UserModel MapUser(User user)
+        {
+            return new UserModel(user?.Id ?? 0, user?.Username, user?.Password, user?.Fullname, user?.Role);
         }
     }
 }
