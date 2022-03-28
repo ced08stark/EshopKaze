@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EshopKaze.Mobile.RegisterPage">
+    <NavigationPage.TitleView>
+        <StackLayout BackgroundColor="White">
+            
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <Grid>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="30" Margin="20">
+                        <Label Text="Register" FontSize="Title" HorizontalOptions="Center" Margin="0, 0, 0, 20"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="txtUsername" Placeholder="Username" WidthRequest="150"  />
+                            <Entry x:Name="txtFullname" Placeholder="Fullname" WidthRequest="160" />
+
+                        </StackLayout>
+
+                        <Entry x:Name="txtpassword" Placeholder="enter your Password" IsPassword="True"/>
+                        <Entry x:Name="txtRole" Placeholder="enter your role"/>
+                        
+                        <Button x:Name="btnSubmit" Text="submit" Clicked="BtnSubmit_Clicked" TextColor="White" BackgroundColor="#3F51B5"/>
+
+                        <ActivityIndicator x:Name = "loader" VerticalOptions = "Center" IsVisible = "False" IsRunning = "True" />
+
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            
+        </ScrollView>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

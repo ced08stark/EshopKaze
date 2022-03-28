@@ -49,25 +49,17 @@ namespace EshopKaze.WebApi.Controllers
 
 
         [HttpPost]
-        public IHttpActionResult Post(UserModel userModel)
+        public IHttpActionResult Post([FromBody] UserModel userModel)
         {
-            try
-            {
+
                 if (userModel == null)
                     return BadRequest();
                 var user = new User(0, userModel.Username, userModel.Password, userModel.Fullname, userModel.Role);
                 user = userRepository.Add(user);
 
                 return Ok(MapUser(user));
-            }
-            catch(DuplicateWaitObjectException)
-            {
-                return Conflict();
-            }
-            catch(Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+          
+            
             
         }
 

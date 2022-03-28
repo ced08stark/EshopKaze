@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="EshopKaze.Mobile.MainPage">
+    <Grid>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="22">
+            <!-- Place new controls here -->
+            <Label Text="Log In" FontFamily="FontSamantha" FontSize="Title" HorizontalTextAlignment="Center"/>
+            
+            <Entry x:Name="txt_name"  Placeholder="enter your name" Margin="0, 30, 0, 0"/>
+            
+            <Entry x:Name="txt_password" Placeholder="enter your password" IsPassword="True"  Margin="0, 20, 0, 0"/>
+            <ImageButton BackgroundColor="Transparent">
+                <ImageButton.Source>
+                    <d:FontImageSource Color="Black" FontFamily="FontEye"/>
+                </ImageButton.Source>
+            </ImageButton>
+            <Button x:Name="btn_connect" Clicked="Button_Clicked_1" TextColor="White" Text="connect" BackgroundColor="#3F51B5"  Margin="0, 30, 0, 0"/>
+            
+            <StackLayout Orientation="Horizontal" >
+                <Button Text="register"  TextColor="Green" BackgroundColor="Transparent" Clicked="Button_Clicked"/>
+                <Label Text="password forget"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent"/>
+
+            </StackLayout>
+
+        </StackLayout>
+        <ActivityIndicator x:Name="loader" VerticalOptions="Center" IsVisible="False" IsRunning="True"/>
+    </Grid>
+    
+
+</ContentPage>

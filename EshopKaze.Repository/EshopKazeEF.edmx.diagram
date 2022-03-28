@@ -6,8 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="51c4cbd22b6942f1b7f3dbf5a22396b1" Name="Diagram1">
         <EntityTypeShape EntityType="EshopKazeModel.Category" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EshopKazeModel.User" Width="1.5" PointX="2.125" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="EshopKazeModel.UserCategory" />
+        <EntityTypeShape EntityType="EshopKazeModel.User" Width="1.5" PointX="2.875" PointY="3.625" />
+        <AssociationConnector Association="EshopKazeModel.FK_Categorie_Categorie" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
